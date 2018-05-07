@@ -90,8 +90,7 @@
 
 function rockPaperScissors(num) {
   const randomNo = Math.floor(Math.random() * 3) + 1;
-  console.log(randomNo);
-
+  console.log(randomNo + ' ' + num);
   if (validate(num)) {
     if (num === randomNo) {
       console.log('tie');
@@ -103,9 +102,9 @@ function rockPaperScissors(num) {
       }
     } else if (num === 2) {
       if (randomNo === 1) {
-        console.log('user wins');
-      } else {
         console.log('computer wins');
+      } else {
+        console.log('user wins');
       }
     } else if (num === 3) {
       if (randomNo === 1) {
@@ -115,17 +114,18 @@ function rockPaperScissors(num) {
       }
     }
   }
-
 }
 
 function validate(num) {
   try {
     if (typeof num !== 'number' || num < 0 || num > 4) {
-      throw new Error('this is not the right number');
+      throw 'this is not the right number';
     }
+    return true;
   } catch (e) {
-    console.error(e.message);
+    console.error(e);
   }
 }
+
 
 rockPaperScissors(2);
