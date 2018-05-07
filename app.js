@@ -14,14 +14,16 @@ jediName('Joseph', 'Kim');
 function infinity(num)
 {
     console.log(num);
-    if (!isFinite(num)) {
-        console.log('And beyond')
-    } else if (num < 0) {
+    if (num < 0) {
         console.log('To negative infinity');
     } else if (num > 0) {
         console.log('To infinity');
     } else {
         console.log('Staying home');
+    }
+
+    if (!isFinite(num)) {
+        console.log('And beyond');
     }
 }
 
