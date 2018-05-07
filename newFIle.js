@@ -1,12 +1,11 @@
 'use strict';
 
 function whoAmI(name,age) {
-    validate(name, age);
-  
-    let yob = yearOfBirth(age);
-      
-    console.log(`Hi, my name is ${name} and I\'m ${age} years old`);
-    console.log(`I was born in ${yob}`); 
+    if(validate(name, age)){      
+      let yob = yearOfBirth(age);      
+      console.log(`Hi, my name is ${name} and I\'m ${age} years old`);
+      console.log(`I was born in ${yob}`); 
+    }  
 }
 
 function yearOfBirth(age) {
@@ -16,14 +15,15 @@ function yearOfBirth(age) {
 function validate(name, age) {
     try {
         if (typeof name !== 'string' || typeof age !== 'number') {
-            throw err;
+          throw 'Arguments not valid';
         }
         if (age < 0) {
-            throw err;
+          throw 'Age cannot be negative';
         }
     } catch (err) {
-        throw new Error('Arguments not valid');
+        console.error(err);
     }
 }
 
-whoAmI('suman', 19);
+//whoAmI('suman', -3);
+whoAmI(19,'suman');
