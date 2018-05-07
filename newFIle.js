@@ -2,6 +2,10 @@
 
 function whoAmI(name,age) {
   try{
+    if (typeof name !== 'string' || typeof age !== 'number'){
+      console.error('Arguments not valid.');
+      throw err;
+    }
     if(age < 0){
       throw err;
     }      
@@ -17,7 +21,7 @@ function whoAmI(name,age) {
 }
 
 function yearOfBirth(age) {
-    return 2018 - age;
+  return 2018 - age;
 }
 
-whoAmI('suman',18);
+whoAmI(19, 'suman');
