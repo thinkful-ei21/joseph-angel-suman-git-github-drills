@@ -33,53 +33,99 @@
 // infinity(infinity);
 
 
-let message = 'craft block argon meter bells brown croon droop';
-function decode(message){  
-  let words = message.split(' ');
-  let result = [];  
-  for(let i=0; i < words.length;i++){    
-    switch(words[i].split('')[0]){
-      case 'a':
-        result.push(words[i].split('')[1]);
-        break;
-      case 'b':
-        result.push(words[i].split('')[2]);
-        break;
-      case 'c':
-        result.push(words[i].split('')[3]);
-        break;
-      case 'd':
-        result.push(words[i].split('')[4]);
-        break;
-      default:
-        result.push(' ');
+// let message = 'craft block argon meter bells brown croon droop';
+// function decode(message){  
+//   let words = message.split(' ');
+//   let result = [];  
+//   for(let i=0; i < words.length;i++){    
+//     switch(words[i].split('')[0]){
+//       case 'a':
+//         result.push(words[i].split('')[1]);
+//         break;
+//       case 'b':
+//         result.push(words[i].split('')[2]);
+//         break;
+//       case 'c':
+//         result.push(words[i].split('')[3]);
+//         break;
+//       case 'd':
+//         result.push(words[i].split('')[4]);
+//         break;
+//       default:
+//         result.push(' ');
+//     }
+//   }
+//   console.log(result.join(''));
+// }
+// decode(message);
+
+// function daysInMonth(month, leapYear = true){
+
+//     switch(month){
+//         case 'January' :
+//         case 'March' :
+//         case 'May' :
+//         case 'July' :
+//         case 'August' :
+//         case 'October' :
+//         case 'December' :
+//             console.log(`${month} has 31 days.`);
+//             break;
+//         case 'April' : 
+//         case 'June' :
+//         case 'September' :
+//         case 'November' :
+//             console.log(`${month} has 30 days.`);
+//             break;
+//         case 'February' :   
+//             console.log(`${month} has ` + (28 + leapYear) + ` days.`);  
+//     }
+// }
+
+// daysInMonth('April');
+
+// rock = 1
+// scissors = 2
+// paper = 3
+
+function rockPaperScissors(num) {
+  const randomNo = Math.floor(Math.random() * 3) + 1;
+  console.log(randomNo);
+
+  if (validate(num)) {
+    if (num === randomNo) {
+      console.log('tie');
+    } else if (num === 1) {
+      if (randomNo === 2) {
+        console.log('user wins');
+      } else {
+        console.log('computer wins');
+      }
+    } else if (num === 2) {
+      if (randomNo === 1) {
+        console.log('user wins');
+      } else {
+        console.log('computer wins');
+      }
+    } else if (num === 3) {
+      if (randomNo === 1) {
+        console.log('user wins');
+      } else {
+        console.log('computer wins');
+      }
     }
   }
-  console.log(result.join(''));
+
 }
-decode(message);
 
-function daysInMonth(month, leapYear = true){
-
-    switch(month){
-        case 'January' :
-        case 'March' :
-        case 'May' :
-        case 'July' :
-        case 'August' :
-        case 'October' :
-        case 'December' :
-            console.log(`${month} has 31 days.`);
-            break;
-        case 'April' : 
-        case 'June' :
-        case 'September' :
-        case 'November' :
-            console.log(`${month} has 30 days.`);
-            break;
-        case 'February' :   
-            console.log(`${month} has ` + (28 + leapYear) + ` days.`);  
+function validate(num) {
+  try {
+    if (typeof num !== 'number' || num < 0 || num > 4) {
+      throw new Error('this is not the right number');
     }
+  } catch (e) {
+    console.error(e.message);
+  }
 }
 
-daysInMonth('April');
+rockPaperScissors(2);
